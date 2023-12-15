@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   docker-gs-ping-roach:
-    depends_on: 
+    depends_on:
       - roach
     build:
       context: .
@@ -17,7 +17,7 @@ services:
       - PGPASSWORD=${PGPASSWORD:?database password not set}
       - PGHOST=${PGHOST:-db}
       - PGPORT=${PGPORT:-26257}
-      - PGDATABASE=${PGDATABASE-mydb}
+      - PGDATABASE=${PGDATABASE:-mydb}
     deploy:
       restart_policy:
         condition: on-failure
